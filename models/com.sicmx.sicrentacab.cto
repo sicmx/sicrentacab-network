@@ -66,3 +66,16 @@ asset Taxi identified by niv {
   --> Taxista taxista optional
 }
 
+asset Contrato identified by IdContrato {
+  o String IdContrato
+  --> Taxista taxista
+  --> Taxi taxi
+}
+
+abstract transaction taxiTrasaccion {
+  --> Taxi taxi
+}
+
+transaction setTaxiPropietarioTransaction extends taxiTrasaccion {
+  --> Propietario propietario
+}

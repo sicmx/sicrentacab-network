@@ -58,6 +58,11 @@ participant Taxista identified by IdTaxista {
   o Persona persona
 }
 
+participant Usuario identified by IdUsuario {
+  o String IdUsuario
+  o Persona persona
+}
+
 asset Taxi identified by niv {
   o String niv
   o DetallesDelVehiculo detallesdelVehiculo
@@ -78,4 +83,5 @@ abstract transaction taxiTrasaccion {
 
 transaction setTaxiPropietarioTransaction extends taxiTrasaccion {
   --> Propietario propietario
+  --> Usuario usuario
 }
